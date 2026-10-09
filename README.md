@@ -8,19 +8,19 @@
 
 ## Скриншоты
 
+**Тёмная тема (по умолчанию)**
+
+<img src="docs/screenshots/dark.png" alt="Кубик и граф, тёмная тема" width="800">
+
+**Поворот слоя: вершины едут по окружностям, за ними тянется хвост**
+
+<img src="docs/screenshots/move-dark.png" alt="Поворот слоя в кубике и в графе" width="800">
+
 **Светлая тема**
 
 <img src="docs/screenshots/light.png" alt="Кубик и граф, светлая тема" width="800">
 
-**Поворот слоя: вершины едут по окружностям, за ними тянется хвост**
-
-<img src="docs/screenshots/move.png" alt="Поворот слоя в кубике и в графе" width="800">
-
-**Тёмная тема**
-
-<img src="docs/screenshots/dark.png" alt="Кубик и граф, тёмная тема" width="800">
-
-<img src="docs/screenshots/move-dark.png" alt="Поворот слоя, тёмная тема" width="800">
+<img src="docs/screenshots/move.png" alt="Поворот слоя, светлая тема" width="800">
 
 ## Как устроен граф
 

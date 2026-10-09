@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,11 +10,17 @@
       <section id="cube"></section>
       <section id="graph"></section>
     </main>
+    <nav class="steps">
+      <button id="back" aria-label="Шаг назад" title="Шаг назад (←)">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7" /></svg>
+      </button>
+      <button id="forward" aria-label="Шаг вперёд" title="Шаг вперёд (→)">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7" /></svg>
+      </button>
+    </nav>
     <footer>
       <button id="scramble">скрамбл</button> ·
       <button id="reset">сброс</button> ·
-      <button id="back" title="←">← назад</button> ·
-      <button id="forward" title="→">вперёд →</button> ·
       <button id="theme">тема</button> ·
       <label>размер <input id="size" type="range" min="40" max="100" value="75" /></label>
     </footer>

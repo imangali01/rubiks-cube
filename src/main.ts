@@ -36,8 +36,16 @@ window.addEventListener('keydown', (e) => {
 
 document.getElementById('scramble')!.onclick = () => player.scramble();
 document.getElementById('reset')!.onclick = () => void player.reset();
-document.getElementById('back')!.onclick = () => player.undo();
-document.getElementById('forward')!.onclick = () => player.redo();
+const backButton = document.getElementById('back') as HTMLButtonElement;
+const forwardButton = document.getElementById('forward') as HTMLButtonElement;
+backButton.onclick = () => player.undo();
+forwardButton.onclick = () => player.redo();
+const updateSteps = () => {
+  backButton.disabled = !player.canUndo;
+  forwardButton.disabled = !player.canRedo;
+};
+player.onChange = updateSteps;
+updateSteps();
 
 const size = document.getElementById('size') as HTMLInputElement;
 const applySize = () => {
@@ -52,10 +60,13 @@ try {
 size.oninput = applySize;
 applySize();
 
-let dark = new URLSearchParams(location.search).get('theme') === 'dark';
+// По умолчанию тёмная тема; выбор пользователя запоминается, ?theme=light|dark его переопределяет.
+let dark = true;
 try {
-  dark ||= localStorage.getItem('theme') === 'dark';
+  dark = localStorage.getItem('theme') !== 'light';
 } catch {}
+const forced = new URLSearchParams(location.search).get('theme');
+if (forced) dark = forced === 'dark';
 const themeButton = document.getElementById('theme')!;
 const applyTheme = () => {
   document.documentElement.dataset.theme = dark ? 'dark' : 'light';

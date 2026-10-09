@@ -20,6 +20,8 @@ export class Player {
   private busy = false;
   private epoch = 0;
   private current: Promise<void> = Promise.resolve();
+  // Вызывается после любого изменения истории, чтобы интерфейс обновил кнопки назад/вперёд.
+  onChange: (() => void) | null = null;
 
   constructor(
     private views: MoveView[],
@@ -28,11 +30,20 @@ export class Player {
     this.sync();
   }
 
+  get canUndo(): boolean {
+    return this.history.length > 0;
+  }
+
+  get canRedo(): boolean {
+    return this.redoStack.length > 0;
+  }
+
   // Новый ход пользователя: попадает в историю и сбрасывает «вперёд».
   enqueue(move: Move, opts: { ms?: number } = {}): void {
     this.history.push(move);
     this.redoStack.length = 0;
     this.push(move, opts.ms ?? this.duration);
+    this.onChange?.();
   }
 
   undo(): void {
@@ -40,6 +51,7 @@ export class Player {
     if (!last) return;
     this.redoStack.push(last);
     this.push(invertMove(last), this.duration);
+    this.onChange?.();
   }
 
   redo(): void {
@@ -47,6 +59,7 @@ export class Player {
     if (!next) return;
     this.history.push(next);
     this.push(next, this.duration);
+    this.onChange?.();
   }
 
   scramble(n = 20): void {
@@ -69,6 +82,7 @@ export class Player {
     this.redoStack.length = 0;
     this.state = solvedState();
     this.sync();
+    this.onChange?.();
   }
 
   idle(): Promise<void> {

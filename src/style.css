@@ -19,6 +19,7 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; color: var(--fg); font: 14px system-ui, sans-serif; }
 body {
+  position: relative;
   display: flex;
   flex-direction: column;
   background: radial-gradient(ellipse at 50% 45%, var(--bg1) 0%, var(--bg2) 70%, var(--bg3) 100%);
@@ -36,6 +37,23 @@ svg { overflow: visible; width: 100%; height: 100%; display: block; touch-action
 footer { height: 44px; display: flex; align-items: center; justify-content: center; gap: 8px; opacity: 0.75; }
 button { all: unset; cursor: pointer; padding: 4px 6px; }
 button:hover { text-decoration: underline; }
+/* Большие кнопки шага назад/вперёд по центру экрана */
+.steps { position: absolute; left: 50%; bottom: 76px; transform: translateX(-50%); display: flex; gap: 14px; z-index: 1; }
+.steps button {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid var(--track);
+  background: color-mix(in srgb, var(--bg2) 80%, transparent);
+  color: var(--fg);
+  backdrop-filter: blur(6px);
+  transition: border-color 0.15s, transform 0.1s, opacity 0.15s;
+}
+.steps button:hover:not(:disabled) { border-color: var(--fg); text-decoration: none; }
+.steps button:active:not(:disabled) { transform: scale(0.92); }
+.steps button:disabled { opacity: 0.3; cursor: default; }
 label { display: inline-flex; align-items: center; gap: 6px; }
 input[type='range'] { width: 90px; accent-color: var(--fg); }
 @media (max-width: 800px) {

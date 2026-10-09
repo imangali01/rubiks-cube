@@ -94,4 +94,20 @@ describe('Player', () => {
     await p.idle();
     expect(p.state).toEqual(solved);
   });
+
+  it('reports whether undo/redo are possible and notifies on every change', async () => {
+    const p = new Player([fakeView()], 0);
+    let calls = 0;
+    p.onChange = () => calls++;
+    expect([p.canUndo, p.canRedo]).toEqual([false, false]);
+    p.enqueue(parseMove('R'));
+    expect([p.canUndo, p.canRedo]).toEqual([true, false]);
+    p.undo();
+    expect([p.canUndo, p.canRedo]).toEqual([false, true]);
+    p.redo();
+    expect([p.canUndo, p.canRedo]).toEqual([true, false]);
+    await p.reset();
+    expect([p.canUndo, p.canRedo]).toEqual([false, false]);
+    expect(calls).toBe(4);
+  });
 });
