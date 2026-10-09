@@ -1,0 +1,21 @@
+{
+  "name": "rubik-graph",
+  "description": "Кубик Рубика и граф его наклеек: крутишь одно, движется другое. 3D-кубик на three.js и интерактивный граф из окружностей.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "three": "0.170.0"
+  },
+  "devDependencies": {
+    "@types/three": "0.170.0",
+    "typescript": "5.6.3",
+    "vite": "5.4.11",
+    "vite-plugin-singlefile": "^2.0.3",
+    "vitest": "2.1.8"
+  }
+}
