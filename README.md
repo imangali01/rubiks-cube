@@ -7,7 +7,7 @@
 Кубик Рубика и граф его 54 наклеек на одном экране.
 
 [![Открыть сайт](https://img.shields.io/badge/открыть_сайт-imangali01.github.io-f7b52c?style=for-the-badge)](https://imangali01.github.io/rubiks-cube/)
-[![Смотреть видео](https://img.shields.io/badge/видео-24_секунды-d93a22?style=for-the-badge)](docs/video/rubik-graph.mp4)
+[![Смотреть видео](https://img.shields.io/badge/видео-25_секунд-d93a22?style=for-the-badge)](docs/video/rubik-graph.mp4)
 
 <a href="docs/video/rubik-graph.mp4">
   <img src="docs/video/preview.gif" alt="Скрамбл в 20 ходов, затем кубик и граф быстро собираются обратно" width="800">
@@ -33,7 +33,7 @@
   <img src="docs/video/poster.jpg" alt="Кадр из видео: кубик и граф рядом" width="800">
 </a>
 
-24 секунды: граф притворяется кубиком Рубика, потом кубик и граф крутятся синхронно, вершину тянут мышью, затем скрамбл в 20 ходов и быстрая сборка обратно. Файл: [`docs/video/rubik-graph.mp4`](docs/video/rubik-graph.mp4).
+25 секунд: граф притворяется кубиком Рубика, потом кубик и граф крутятся синхронно, вершину тянут мышью, затем скрамбл в 20 ходов и быстрая сборка обратно. Файл: [`docs/video/rubik-graph.mp4`](docs/video/rubik-graph.mp4).
 
 ## Скриншоты
 
