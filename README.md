@@ -29,9 +29,9 @@
 
 ## Видео
 
-<video width="320" height="240" controls>
-  <source src="video.mov" type="docs/video/rubik-graph.mp4">
-</video>
+<a href="docs/video/rubik-graph.mp4">
+  <img src="docs/video/preview.gif" alt="Скрамбл в 20 ходов, затем кубик и граф быстро собираются обратно" width="800">
+</a>
 
 25 секунд: граф притворяется кубиком Рубика, потом кубик и граф крутятся синхронно, вершину тянут мышью, затем скрамбл в 20 ходов и быстрая сборка обратно. Файл: [`docs/video/rubik-graph.mp4`](docs/video/rubik-graph.mp4).
 
